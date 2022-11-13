@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.js": "/le-protocole/static/js/main.16286e35.js",
+    "static/media/Alex.png": "/le-protocole/static/media/Alex.b9ca2b8d1b927298890b.png",
+    "static/media/Ken.png": "/le-protocole/static/media/Ken.20207fd2aa1dbacc4605.png",
+    "static/media/Chun.png": "/le-protocole/static/media/Chun.118087fff34697345b82.png",
+    "static/media/Gouki.png": "/le-protocole/static/media/Gouki.fc96d2e299192760461c.png",
+    "static/media/Remy.png": "/le-protocole/static/media/Remy.5bce471ed4d61bc764b3.png",
+    "static/media/Hugo.png": "/le-protocole/static/media/Hugo.e82fb487824823d56a52.png",
+    "static/media/Yun.png": "/le-protocole/static/media/Yun.23514dcef67b7a3c2ec6.png",
+    "static/media/Elena.png": "/le-protocole/static/media/Elena.56364d5272357dd82927.png",
+    "static/media/Ryu.png": "/le-protocole/static/media/Ryu.6c34c3ca73be2a46fdf8.png",
+    "static/media/Necro.png": "/le-protocole/static/media/Necro.3446fdae53e47a26d707.png",
+    "static/media/Sean.png": "/le-protocole/static/media/Sean.cdcb68df099b71ab777b.png",
+    "static/media/Yang.png": "/le-protocole/static/media/Yang.eb1042b9a248358919ad.png",
+    "static/media/Makoto.png": "/le-protocole/static/media/Makoto.80432a4b6afbe1f0cc4c.png",
+    "static/media/Ibuki.png": "/le-protocole/static/media/Ibuki.d2f099bf060f84648ac6.png",
+    "static/media/Urien.png": "/le-protocole/static/media/Urien.83119fabc2eb032918f1.png",
+    "static/media/Dudley.png": "/le-protocole/static/media/Dudley.6b3af517d81eafab2702.png",
+    "static/media/Oro.png": "/le-protocole/static/media/Oro.6f2fa2f2c01facdf2e08.png",
+    "static/media/Q.png": "/le-protocole/static/media/Q.20e988777fe4925b9362.png",
+    "static/media/Twelve.png": "/le-protocole/static/media/Twelve.856729b172a52521d279.png",
+    "static/media/LeProtocole.png": "/le-protocole/static/media/LeProtocole.6862af273c1d8da03118.png",
+    "index.html": "/le-protocole/index.html",
+    "main.16286e35.js.map": "/le-protocole/static/js/main.16286e35.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.16286e35.js"
+  ]
+}
