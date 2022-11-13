@@ -13,12 +13,13 @@ type GameSettingsProps = {
 export const GameSettings = ({ setPlayer1, setPlayer2, startGame }: GameSettingsProps) => {
   const teamSize = useRef(19);
   const isMirror = useRef(false);
+  const kebab = useRef(false);
   const seed = useRef("");
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        startGame(teamSize.current, seed.current, isMirror.current);
+        startGame(teamSize.current, seed.current, isMirror.current, kebab.current);
       }}
     >
       <SettingsWrapper>
@@ -70,12 +71,12 @@ export const GameSettings = ({ setPlayer1, setPlayer2, startGame }: GameSettings
             }}
           />
         </Subsection>
-        {/* <Subsection>
+        <Subsection>
           <Label>ça joue pour un Kebab ?</Label>
           <Radio
             label="Oui"
             id="random-radio"
-            groupName="pool-selection"
+            groupName="kebab-selection"
             onChange={() => {
               kebab.current = true;
             }}
@@ -83,12 +84,12 @@ export const GameSettings = ({ setPlayer1, setPlayer2, startGame }: GameSettings
           <Radio
             label="Non"
             id="mirror-radio"
-            groupName="pool-selection"
+            groupName="kebab-selection"
             onChange={() => {
               kebab.current = false;
             }}
           />
-        </Subsection> */}
+        </Subsection>
         <StartButton>FIGHT !</StartButton>
       </SettingsWrapper>
     </form>

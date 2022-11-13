@@ -1,6 +1,7 @@
 import { styled } from "@stitches/react";
 import { stringify } from "querystring";
 import { useEffect, useState } from "react";
+import { setSourceMapRange } from "typescript";
 import images from "../assets/images";
 import { CharacterList } from "./CharacterList";
 import { CharacterManager } from "./CharacterManager";
@@ -52,12 +53,25 @@ const GameManager = () => {
 
   const [winner, setWinner] = useState<string | null>(null);
 
+  const [msg, setMsg] = useState("");
+  const [img, setImg] = useState("");
+  const [printSeed, setSeed] = useState("");
+
   const startGame = (teamSize: number, seed: string, isMirror?: boolean, kebab?: boolean) => {
+    if (kebab === true) {
+      setMsg(" gagne un Kebab");
+      setImg("https://i.giphy.com/media/sE0nAnZU4xsgYVfkbB/giphy.webp");
+    }
+    if (kebab === false) {
+      setMsg("n'est pas carry par son perso");
+      setImg("");
+    }
+
     if (seed === "") {
       const SeedP1 = getRandomInt();
       const SeedP2 = getRandomInt();
       const teamP1 = generateRandomTeam(Object.keys(images), SeedP1, teamSize);
-      const printSeed = String(SeedP1) + "." + String(SeedP2) + "." + Number(isMirror);
+      setSeed(String(SeedP1) + "." + String(SeedP2) + "." + Number(isMirror));
       console.log(printSeed);
       const tmpP1 = Array.from(teamP1);
       const teamP2 = isMirror
@@ -69,6 +83,7 @@ const GameManager = () => {
       const SeedP1 = seed.split(".")[0];
       const SeedP2 = seed.split(".")[1];
       isMirror = Boolean(Number(seed.split(".")[2]));
+      setSeed(String(SeedP1) + "." + String(SeedP2) + "." + Number(isMirror));
       const teamP1 = generateRandomTeam(Object.keys(images), Number(SeedP1), teamSize);
       const tmpP1 = Array.from(teamP1);
       const teamP2 = isMirror
@@ -112,6 +127,7 @@ const GameManager = () => {
               setWinner={setWinner}
             />
           </FixedContainer>
+          <Seed>{printSeed} </Seed>
           <LayoutCharacterList css={{ alignItems: "end" }}>
             <CheckBox
               id={`p2-view-full-list`}
@@ -124,9 +140,11 @@ const GameManager = () => {
           </LayoutCharacterList>
           {winner !== null ? (
             <WinningScreen>
-              <WinningMessage>{winner} gagne un kebab</WinningMessage>
+              <WinningMessage>
+                {winner} {msg}
+              </WinningMessage>
               {/* Message de victoire hors kebab : "{winner} n'est pas carry par son perso" */}
-              <img src="https://i.giphy.com/media/sE0nAnZU4xsgYVfkbB/giphy.webp" />
+              <img src={img} />
             </WinningScreen>
           ) : null}
         </BottomPageWrapper>
@@ -136,6 +154,14 @@ const GameManager = () => {
 };
 
 export default GameManager;
+
+const Seed = styled("div", {
+  fontWeight: "bold",
+  textTransform: "uppercase",
+  marginTop: "8px",
+  fontSize: "24px",
+  userSelect: "all",
+});
 
 const LayoutCharacterList = styled("div", {
   display: "flex",
